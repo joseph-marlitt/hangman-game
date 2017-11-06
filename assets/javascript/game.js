@@ -10,14 +10,18 @@ var hangmanWords = [
 "overhang", 
 "onsighting"
 ]
+
+
+
 // choose random word
 var gameWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
+console.log (gameWord);
 
 //making the word seperate
-var gameWord = word.split (;
-var arrayOfBlanks = gameWord.map(function(a){
+var gameWord = word.split ();
+
+
+//create an Array of Blanks
+var arrayOfBlanks = gameWord.map(function(gameWord){
 	rerturn '_'
 }
-
-console.log(gameWord)
-//create an Array of Blanks
