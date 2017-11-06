@@ -1,3 +1,4 @@
+
 //An array of words that fit the theme
 var hangmanWords = [
 "bouldering",
@@ -17,11 +18,12 @@ var hangmanWords = [
 var gameWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
 console.log (gameWord);
 
+
 //making the word seperate
 var gameWord = word.split ();
 
 
-//create an Array of Blanks
+//create an Array of Blanks for word
 var arrayOfBlanks = gameWord.map(function(gameWord){
 	rerturn '_'
 }
