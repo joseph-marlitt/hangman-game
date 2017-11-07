@@ -16,14 +16,22 @@ var hangmanWords = [
 // choose random word
 
 var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
-document.getElementById("mysteryWord").innerHTML = 
-for (var i = randomWord.length - 1; i >= 0; i--) {
-	var splitWord = gameWord.split ("");
-var arrayOfBlanks = splitWord.map(function(x) {
-	return x = ('_');
-});
-}
-console.log(randomWord)
+// Splits random word into string
+var splitWord = randomWord.split ("");
+
+// creates an array of blanks with Splitword
+var arrayOfBlanks = splitWord.map(function(i) {
+	return i = ('_');
+})
+
+// for (i = 0; i < randomWord.length; i++) {
+// 	var splitWord = 
+	
+// 	// });
+// }
+// document.getElementById("mysteryWord").innerHTML = x.arrayOfBlanks
+console.log(randomWord, splitWord, arrayOfBlanks)
+document.getElementById("mysteryWord")
 // var targetDiv = getElementById("mysteryWord");
 
 
