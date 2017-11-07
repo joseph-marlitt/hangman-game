@@ -14,24 +14,30 @@ var hangmanWords = [
 
 
 // choose random word
-
 var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
-// Splits random word into string
+
+// Splits randomWord into its own string
 var splitWord = randomWord.split ("");
 
-// creates an array of blanks with Splitword
+// Creates an array of blanks with Splitword
 var arrayOfBlanks = splitWord.map(function(i) {
 	return i = ('_');
+
 })
+console.log(randomWord, splitWord, arrayOfBlanks)
+// var word = document.getElementById("mysteryword");
+// word.innerHTML = arrayOfBlanks;
+
+document.getElementById("mysteryword").innerHTML = splitWord;
+// document.getElementById("mysteryword").innerHTML;
+
+// On keystroke up, loop splitWord for matches
+
 
 // for (i = 0; i < randomWord.length; i++) {
-// 	var splitWord = 
 	
-// 	// });
-// }
-// document.getElementById("mysteryWord").innerHTML = x.arrayOfBlanks
-console.log(randomWord, splitWord, arrayOfBlanks)
-document.getElementById("mysteryWord")
+
+// document.getElementById("mysteryWord")
 // var targetDiv = getElementById("mysteryWord");
 
 
