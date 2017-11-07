@@ -27,12 +27,17 @@ var arrayOfBlanks = splitWord.map(function(i) {
 console.log(randomWord, splitWord, arrayOfBlanks)
 // var word = document.getElementById("mysteryword");
 // word.innerHTML = arrayOfBlanks;
-
-document.getElementById("mysteryword").innerHTML = splitWord;
+function newFunction () {
+document.getElementById("mysteryword").innerHTML = "Hello";
+}
+newFunction()
 // document.getElementById("mysteryword").innerHTML;
 
 // On keystroke up, loop splitWord for matches
-
+.on("click", function() {
+      
+        alert("I've been clicked!");
+      });
 
 // for (i = 0; i < randomWord.length; i++) {
 	
