@@ -12,52 +12,50 @@ var hangmanWords = [
 "onsighting"
 ]
 
-// // var alreadyGuessed =  document.getElementById("letterGuessed")[];
-// var guessesRemaining = document.getElementById("guessesRemaining") 10;
-// var points = document.getElementById("points") 0;
+var alreadyGuessed = [];
+var guessesRemaining = 10;
+var points = 0
 var letters = (/^[a-z]+$/) 
-// choose random word
 var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
-
-// Splits randomWord into its own string
 var splitWord = randomWord.split ("");
 
 // Creates an array of blanks with Splitword
 var arrayOfBlanks = splitWord.map(function(i) {
 	return i = ('_');
 })
-
-console.log(randomWord, splitWord, arrayOfBlanks)
+function startgame () {console.log(randomWord, splitWord, arrayOfBlanks)
 
 document.getElementById("mysteryWord").innerHTML = arrayOfBlanks;
 
 
 // Keypress recognition
-
-document.onkeyup = function() {  
-    var letterGuessed = event.key.toLowerCase();
+// On keystroke up, loop for matches within word
+document.onkeyup = function(press) {  
+    var letterGuessed = (press.key);
+    console.log(letterGuessed);
     var realLetter = "";
-    
+    alreadyGuessed.push(letterGuessed);
 
 // Check if letter pressed exists in the hidden word.
-	if (randomWord.includes(letterGuessed)) {
-		console.log(letterGuessed)
-		// On keystroke up, loop for matches within word
-		for (var i = 0; i < randomWord.length; i++) {
-			// If letter exists, replace the blank. 
-			if (letterGuessed == randomWord[i]) {
-				arrayOfBlanks[i] == randomWord
+	// if (randomWord.includes(letterGuessed)) {
+	// 	console.log(letterGuessed)
+		// If letter exists, replace the blank. 
+		for (i = 0; i < alreadyGuessed.length; i++) 
+          for(j = 0; j< arrayOfBlanks.length; j++){
+			if (letterGuessed == randomWord[j]) {
+				console.log("correct")
+;				arrayOfBlanks[j] = letterGuessed;
 
 			} // end replace blank
 		}//end the loop for match
 	}
 
-};
+
 
 	
 
 // Add letter to the array alreadyGuessed.
-
+// if (letterGuessed !== randomWord[i])
 
 	
 // If the letter does not exist, -1 guesses remaining
@@ -95,4 +93,5 @@ document.onkeyup = function() {
 
 
 //create an Array of Blanks for word
+}
 
