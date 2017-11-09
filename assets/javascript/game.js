@@ -12,6 +12,9 @@ var hangmanWords = [
 "onsighting"
 ]
 
+var alreadyGuessed = [];
+var guessesRemaining = 10;
+var points = 0;
 
 // choose random word
 var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
@@ -22,17 +25,31 @@ var splitWord = randomWord.split ("");
 // Creates an array of blanks with Splitword
 var arrayOfBlanks = splitWord.map(function(i) {
 	return i = ('_');
-
 })
+var letters = (/^[a-z]+$/) 
+
 console.log(randomWord, splitWord, arrayOfBlanks)
 document.getElementById("mysteryWord").innerHTML = arrayOfBlanks;
 
+
 // Keypress recognition
-.on("click", function() {
+
+document.onkeyup = function() {
       
-        alert("I've been clicked!");
-      });
+    var letterGuessed = event.key.toLowerCase();
 // Check if letter pressed exists in the hidden word.
+		
+	if (randomWord.includes(letterGuessed)) {
+		for (var i = 0; i < randomWord.length; i++) {
+			if (letterGuessed == randomWord[i]) {
+
+			}
+		}
+	}
+
+};
+
+	
 
 // Add letter to the array alreadyGuessed.
 
@@ -40,23 +57,23 @@ document.getElementById("mysteryWord").innerHTML = arrayOfBlanks;
 	// 
 
 // If the letter does not exist, -1 guesses remaining
-var word = document.getElementById("mysteryword");
-word.innerHTML = arrayOfBlanks;
-function newFunction () {
-document.getElementById("mysteryword").innerHTML = "Hello";
-}
-newFunction()
-document.getElementById("mysteryword").innerHTML;
+// var word = document.getElementById("mysteryword");
+// word.innerHTML = arrayOfBlanks;
+// function newFunction () {
+// document.getElementById("mysteryword").innerHTML = "Hello";
+// }
+// newFunction()
+// document.getElementById("mysteryword").innerHTML;
 
-// On keystroke up, loop splitWord for matches
+// // On keystroke up, loop splitWord for matches
 
 
-for (i = 0; i < randomWord.length; i++) {
+// for (i = 0; i < randomWord.length; i++) {
 	
 
-document.getElementById("mysteryWord")
-var targetDiv = getElementById("mysteryWord");
-
+// document.getElementById("mysteryWord")
+// var targetDiv = getElementById("mysteryWord");
+// }
 
 // randomWord();
 
@@ -72,3 +89,4 @@ var targetDiv = getElementById("mysteryWord");
 
 
 //create an Array of Blanks for word
+
