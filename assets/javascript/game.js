@@ -7,7 +7,7 @@ var hangmanWords = [
 "crimp", 
 "lockoff", 
 "gnarley", 
-"bruhbruhbruh", 
+"sidepull", 
 "overhang", 
 "onsighting"
 ]
@@ -25,25 +25,37 @@ var arrayOfBlanks = splitWord.map(function(i) {
 
 })
 console.log(randomWord, splitWord, arrayOfBlanks)
-// var word = document.getElementById("mysteryword");
-// word.innerHTML = arrayOfBlanks;
-function newFunction () {
-document.getElementById("mysteryword").innerHTML = "Hello";
-}
-newFunction()
-// document.getElementById("mysteryword").innerHTML;
+document.getElementById("mysteryWord").innerHTML = arrayOfBlanks;
 
-// On keystroke up, loop splitWord for matches
+// Keypress recognition
 .on("click", function() {
       
         alert("I've been clicked!");
       });
+// Check if letter pressed exists in the hidden word.
 
-// for (i = 0; i < randomWord.length; i++) {
+// Add letter to the array alreadyGuessed.
+
+// If letter exists, replace the blank. 
+	// 
+
+// If the letter does not exist, -1 guesses remaining
+var word = document.getElementById("mysteryword");
+word.innerHTML = arrayOfBlanks;
+function newFunction () {
+document.getElementById("mysteryword").innerHTML = "Hello";
+}
+newFunction()
+document.getElementById("mysteryword").innerHTML;
+
+// On keystroke up, loop splitWord for matches
+
+
+for (i = 0; i < randomWord.length; i++) {
 	
 
-// document.getElementById("mysteryWord")
-// var targetDiv = getElementById("mysteryWord");
+document.getElementById("mysteryWord")
+var targetDiv = getElementById("mysteryWord");
 
 
 // randomWord();
