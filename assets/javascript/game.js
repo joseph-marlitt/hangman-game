@@ -12,9 +12,9 @@ var hangmanWords = [
 "onsighting"
 ]
 
-var alreadyGuessed = [];
-var guessesRemaining = 10;
-var points = 0;
+// // var alreadyGuessed =  document.getElementById("letterGuessed")[];
+// var guessesRemaining = document.getElementById("guessesRemaining") 10;
+// var points = document.getElementById("points") 0;
 var letters = (/^[a-z]+$/) 
 // choose random word
 var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
@@ -37,17 +37,19 @@ document.getElementById("mysteryWord").innerHTML = arrayOfBlanks;
 document.onkeyup = function() {  
     var letterGuessed = event.key.toLowerCase();
     var realLetter = "";
-    console.log(realLetter);
+    
+
 // Check if letter pressed exists in the hidden word.
-
 	if (randomWord.includes(letterGuessed)) {
-
-		// On keystroke up, loop for matches
+		console.log(letterGuessed)
+		// On keystroke up, loop for matches within word
 		for (var i = 0; i < randomWord.length; i++) {
+			// If letter exists, replace the blank. 
 			if (letterGuessed == randomWord[i]) {
-				arrayOfBlanks[i] = letterGuessed;
-			}
-		}
+				arrayOfBlanks[i] == randomWord
+
+			} // end replace blank
+		}//end the loop for match
 	}
 
 };
@@ -56,7 +58,7 @@ document.onkeyup = function() {
 
 // Add letter to the array alreadyGuessed.
 
-// If letter exists, replace the blank. 
+
 	
 // If the letter does not exist, -1 guesses remaining
 
