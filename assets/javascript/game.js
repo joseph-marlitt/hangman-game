@@ -3,12 +3,16 @@
 var hangmanWords = [
 "bouldering",
 "belaying", 
-"sending", 
+"sending",
+"dyno",
+"campus",
+"static", 
 "crimp", 
 "lockoff", 
 "gnarley", 
 "sidepull", 
-"overhang", 
+"overhang",
+"crush", 
 "onsighting"
 ]
 var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
@@ -40,7 +44,7 @@ document.onkeyup = function(press) {
     var letterGuessed = (press.key);
     console.log(letterGuessed);
     $("#youlose").html("")
-	$("#youwin").html()
+	$("#youwin").html("")
    
 // Check if letter pressed exists in the hidden word.
 	 	
@@ -63,8 +67,8 @@ document.onkeyup = function(press) {
 				
 				$("#guessesRemaining").html("Guesses Remaining: " + guessesRemaining);
 			}
-			if (randomWord==arrayOfBlanks.join('')) {
-				$("#youwin").html("YOU SENDED THE GNAR!");
+			if (randomWord == arrayOfBlanks.join('')) {
+				$("#youwin").html("YOU SENT THE PROBLEM!");
 				points ++;
 				alreadyGuessed = [];
 				arrayOfBlanks = [];
