@@ -23,6 +23,7 @@ var arrayOfBlanks = [];
 
 
 function startGame(){
+
 	var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
 	var splitWord = randomWord.split ("");
 	// Keypress recognition
@@ -34,11 +35,12 @@ function startGame(){
 
 
 // On keystroke up, loop for matches within word
-document.onkeyup = function(press) {  
+document.onkeyup = function(press) { 
     var realLetter = " ";
     var letterGuessed = (press.key);
     console.log(letterGuessed);
-    
+    $("#youlose").html("")
+	$("#youwin").html()
    
 // Check if letter pressed exists in the hidden word.
 	 	
@@ -64,18 +66,28 @@ document.onkeyup = function(press) {
 			if (randomWord==arrayOfBlanks.join('')) {
 				$("#youwin").html("YOU SENDED THE GNAR!");
 				points ++;
-				startGame();
 				alreadyGuessed = [];
+				arrayOfBlanks = [];
+				guessesRemaining = 10;
+				startGame();
+				
+
 			}
 			if (guessesRemaining == 0) {
 				$("#youlose").html("You just fell to your death, nice one loser");
+				alreadyGuessed = [];
+				arrayOfBlanks = [];
+				guessesRemaining = 10;
+				points = 0;
+				startGame();
 			}
 
 	$("#guessesRemaining").html("Guesses Remaining: " + guessesRemaining);
 	$("#mysteryWord").html("Try and guess me! " + arrayOfBlanks.join(" "));
 	$("#lettersGuessed").html("Letters Guessed: " + alreadyGuessed);
 	$("#points").html(" Points: " + points);
-}}
+}//onclick function
+}//startgame function
 
 	
 
