@@ -3,19 +3,20 @@ h1 {
 	margin: auto;
 	text-align: center;
 	position: relative;
-  margin-top: 210px;
+  	margin-top: 210px;
     
 }
 p {
 	font-family: 'Rajdhani', sans-serif;
 	text-align: center;
-	font-size: 16px;
+	font-size: 18px;
+	font-style: italic;
 
 }
 button {
 	font-family: 'Rajdhani', sans-serif;
 	margin: auto;
-	background-color: #777777;
+	background-color: #333333;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -23,6 +24,10 @@ button {
     text-decoration: none;
     display: inherit;
     font-size: 16px;
+}
+button:hover {
+	color: #333333;
+	background-color:#ffffff;
 }
 
 #background {
@@ -55,6 +60,8 @@ button {
 	float: left;
 }
 #youwin, #youlose {
+	text-align: center;
+	font-size: 30px;
 
 }
 

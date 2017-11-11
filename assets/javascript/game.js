@@ -25,32 +25,34 @@ var letters = (/^[a-z]+$/);
 var arrayOfBlanks = [];
 // Creates an array of blanks with Splitwor
 
-
+//Start the game
 function startGame(){
-
+	//choose a random word.
 	var randomWord = hangmanWords[Math.floor(hangmanWords.length * Math.random())];
 	var splitWord = randomWord.split ("");
-	// Keypress recognition
 	for (i = 0; i < randomWord.length; i++) {
 		arrayOfBlanks[i] = "_";
-		$("#mysteryWord").html("Try and guess me! " + arrayOfBlanks.join(" "));
 		console.log(arrayOfBlanks);
+		// Print scoring info on game start
+		$("#mysteryWord").html("Try and guess me! " + arrayOfBlanks.join(" "));
+		$("#guessesRemaining").html("Guesses Remaining: " + guessesRemaining);
+		$("#lettersGuessed").html("Letters Guessed: " + alreadyGuessed);
 	}
 
 
-// On keystroke up, loop for matches within word
+// Keystroke recognition.
 document.onkeyup = function(press) { 
-    var realLetter = " ";
     var letterGuessed = (press.key);
     console.log(letterGuessed);
     $("#youlose").html("")
 	$("#youwin").html("")
    
 // Check if letter pressed exists in the hidden word.
-	 	
+	//loop for the word in blanks/has letter been guessed?
 	for (i = 0; i < alreadyGuessed.length; i++) 
           for(j = 0; j< arrayOfBlanks.length; j++){
 
+          	//Is the letter guessed correct?
 			if (letterGuessed == randomWord[j]) {
 				console.log("correct");
 				arrayOfBlanks[j] = letterGuessed;
@@ -58,39 +60,39 @@ document.onkeyup = function(press) {
 				$("#mysteryWord").html("Try and guess me! " + arrayOfBlanks.join(" "));
 			} // end replace blank
 		}
+			//Is the guess wrong?
 			if(randomWord.indexOf(letterGuessed) < 0) {
 				if (alreadyGuessed.indexOf(letterGuessed) == -1) {
     				alreadyGuessed.push(letterGuessed);
     				guessesRemaining --;
 			}
 				console.log(guessesRemaining);
-				
 				$("#guessesRemaining").html("Guesses Remaining: " + guessesRemaining);
 			}
+			//How does the user win/reset.
 			if (randomWord == arrayOfBlanks.join('')) {
-				$("#youwin").html("YOU SENT THE PROBLEM!");
+				$("#youwin").html("Awesome climbing rockstar!");
 				points ++;
 				alreadyGuessed = [];
 				arrayOfBlanks = [];
 				guessesRemaining = 10;
-				startGame();
-				
-
+				startGame();	
 			}
+			//How the use loses/reset.
 			if (guessesRemaining == 0) {
-				$("#youlose").html("You just fell to your death, nice one loser");
+				$("#youlose").html("You just fell to your death...");
 				alreadyGuessed = [];
 				arrayOfBlanks = [];
 				guessesRemaining = 10;
 				points = 0;
 				startGame();
 			}
-
-	$("#guessesRemaining").html("Guesses Remaining: " + guessesRemaining);
-	$("#mysteryWord").html("Try and guess me! " + arrayOfBlanks.join(" "));
-	$("#lettersGuessed").html("Letters Guessed: " + alreadyGuessed);
-	$("#points").html(" Points: " + points);
-}//onclick function
+			//print out results as game progesses
+			$("#guessesRemaining").html("Guesses Remaining: " + guessesRemaining);
+			$("#mysteryWord").html("Try and guess me! " + arrayOfBlanks.join(" "));
+			$("#lettersGuessed").html("Letters Guessed: " + alreadyGuessed);
+			$("#points").html(" Points: " + points);
+	}//onclick function
 }//startgame function
 
 	
